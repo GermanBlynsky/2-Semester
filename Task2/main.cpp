@@ -35,7 +35,7 @@ int main() {
             result.insert(*it2);
             ++it2;
         }
-        else { // Случай когда *it1 == *it2
+        else { // РЎР»СѓС‡Р°Р№ РєРѕРіРґР° *it1 == *it2
             int val = *it1;
             int count1 = ms1.count(val);
             int count2 = ms2.count(val);
