@@ -4,8 +4,23 @@
 #include <functional> 
 
 int main() {
-    std::vector<int> V1 = { 1, 2, 3, 4, 5 };
-    std::vector<int> V2 = { 10, 20, 30, 40, 50 };
+    int n;
+    std::cout << "Введите размер векторов V1 и V2: ";
+    std::cin >> n;
+    std::vector<int> V1(n);
+    std::vector<int> V2(n);
+    std::cout << "Введите элементы вектора V1 (" << n << " чисел через пробел): ";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> V1[i];
+    }
+    std::cout << "Введите элементы вектора V2 (" << n << " чисел через пробел): ";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> V2[i];
+    }
+    if (V1.size() != V2.size()) {
+        std::cerr << "Ошибка: векторы должны быть одинаковой длины!" << std::endl;
+        return 1;
+    }
     std::transform(V2.begin(), V2.end(), V1.begin(), V2.begin(), std::multiplies<int>());
     for (int num : V2) {
         std::cout << num << " ";
